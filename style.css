@@ -433,3 +433,25 @@ hr {
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 }
+
+@media (max-width: 768px) {
+    .filter-container {
+        flex-direction: column; /* Stack elements */
+        align-items: stretch; /* Make items fill the width */
+        border-radius: 20px; /* Softer rounded corners */
+        padding: 10px;
+        max-width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .select-wrapper {
+        width: 100%;
+        border-right: none; /* Remove border between selects */
+        margin-bottom: 10px;
+    }
+
+    .filter-container button {
+        width: 100%; /* Full width button */
+        border-radius: 20px;
+    }
+}
+
