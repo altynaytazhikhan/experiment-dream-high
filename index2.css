@@ -1,0 +1,435 @@
+*{
+    margin: 0 ;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+nav{
+    background: white;
+    height: 60px;
+    width: 95%;
+    display: flex; /*GPT*/
+    justify-content: space-between; /* Ensures logo left, button right */
+    padding: 0 20px; /* Adjust spacing */
+    position: relative; /* Needed for absolute positioning of .checkbtn */
+    margin: 10px auto 0 auto; /* change to DH style */
+    border-radius: 50px;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgb(199, 199, 199);
+    z-index: 10;
+    font-family: 'TeX Gyre Adventor', sans-serif !important; 
+    padding-left: 5px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+  
+  .logo img {
+    height: 50px; 
+    width: auto;
+    max-width: 150px;
+  }
+  
+  .logo-text {
+    font-family: 'TeX Gyre Adventor', sans-serif !important; 
+    font-size: 20px; 
+    font-weight: bold;
+    color: rgb(0, 0, 0); 
+    text-transform: uppercase;
+  }
+  
+  .menu-list{
+    display: flex; /* GPT */
+    align-items: center; /* GPT */
+    z-index: 10; 
+
+  }
+  
+  nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+  
+  }
+  
+  
+  nav ul li a{
+    color: black;
+    font-size: 17px;
+    padding: 5px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+    
+  }
+  
+  a.active, a:hover{
+    background: #2C2E83;
+    transition: .5s;
+    color: white;
+  }
+  
+  /* HAMBURGER MENU */
+  
+  .checkbtn{
+    font-size: 30px;
+    color: black;
+    float: right;
+    line-height: 80px;
+    cursor: pointer;
+    display: none; /* GPT */
+    right: 20px; /* GPT */
+    z-index: 1100; /* Поднять поверх hero */
+  }
+  
+  #check{
+    display: none;
+    
+  }
+  
+  @media (max-width: 952px){
+    label.logo{
+      font-size: 30px;
+      padding-right: 50px;
+    }
+    nav ul li a{
+      font-size: 16px;
+  }
+  }
+  
+  @media (max-width: 858px){
+  .menu-list{  /* GPT */
+    flex-direction: column; 
+    text-align: center;
+  }
+  
+  
+    .checkbtn{
+      display: block;
+    }
+  
+   ul{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: #2c3e50;
+    top: 80px;
+    right:-100%;
+    text-align: center;
+    transition: all .5s;
+    gap: 10px; /* Reduce space between items */
+  
+   }
+   nav ul li{
+    display: block;
+    margin: 20px 0;
+    line-height: 40px;
+   }
+   nav ul li a{
+    font-size: 20px;
+    color: white;
+  
+   }
+   a:hover, a:active {
+    background: none;
+    color: #2C2E83;
+   }
+   #check:checked ~ .menu-list {
+    right: 0;
+  }
+  }
+ 
+
+section{
+    background: url(bgl.jpg) no-repeat;
+    background-size: cover;
+    height: 100vh;
+    margin-top: 50px;
+}
+
+
+@font-face {
+    font-family: 'TeX Gyre Adventor';
+    src: url('tex-gyre-adventor.zip') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.hero {
+    width: 100vw; 
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    border-radius: 0;
+    margin: -70px auto 0 auto; 
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    
+}
+
+.hero-content {
+    font-family: 'Moderustic', sans-serif !important; /* Force the font */
+    position: relative;
+    color: white;
+    z-index: 1
+}
+
+
+
+.hero h1 {
+    font-family: 'Your-Font-Name', sans-serif !important;
+    font-size: 130px;
+    font-weight: bold;
+    color: white;
+}
+
+.hero p {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #6465A4;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: #2C2E83;
+}
+
+
+@media (max-width: 768px) {
+    .hero {
+        height: 60vh;
+        background-position: center;
+        background-size: cover;
+        padding: 20px;
+    }
+
+    .hero-content {
+        padding: 10px;
+    }
+
+    .hero h1 {
+        font-size: 40px;  /* Smaller font size for mobile */
+    }
+
+    .hero p {
+        font-size: 16px;  /* Adjusted font size */
+    }
+}
+
+
+.filter-section {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    margin: 50px;
+}
+
+.filter-section h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    width: 100%;
+    max-width: 800px; /* Adjust width */
+    border: 2px solid black;
+    border-radius: 50px;
+    overflow: hidden;
+    background: white;
+    margin: auto;
+}
+
+/* Wrapper for each select */
+.select-wrapper {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom select styling */
+.select-wrapper select {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    font-size: 20px;
+    text-align: center;
+    appearance: none;
+    background: white;
+    cursor: pointer;
+    -webkit-appearance: none; /* For Safari */
+    -moz-appearance: none; /* For Firefox */
+}
+
+/* Custom dropdown arrow (CSS Triangle) */
+.select-wrapper::after {
+    content: "";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    width: 10px;
+    height: 10px;
+    background: white;
+    transform: translateY(-50%) rotate(45deg);
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+    pointer-events: none;
+}
+
+/* Divider between select elements */
+.select-wrapper:first-child {
+    border-right: 2px solid black;
+}
+
+/* Button styles */
+.filter-container button {
+    flex: 0.8;
+    padding: 12px;
+    background: navy;
+    color: white;
+    font-size: 20px;
+    border: none;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+}
+
+.filter-container button i {
+    margin-left: 5px;
+}
+
+.filter-container select:focus,
+.filter-container button:focus {
+    outline: none;
+}
+
+
+.trending-opportunities {
+  margin-left: 200px;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'TeX Gyre Adventor', sans-serif;
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+  border: 3px solid #ddd;
+  overflow: hidden;
+  text-align: left;
+  padding: 18px 12px;
+
+  cursor: pointer;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+}
+
+.image-placeholder {
+  width: 96%;
+  height: 180px;
+  background: #d3d3d3;
+  border-radius: 5px;
+}
+
+.card-content {
+  padding: 14px 10px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  color: #333;
+}
+
+hr {
+  border: none;
+  border-top: 3px solid #ddd;
+  margin: 12px 0;
+}
+
+.card-footer {
+  font-size: 14px;
+  color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .filter-container {
+      flex-direction: column;
+      border-radius: 20px;
+  }
+
+  .filter-container button {
+      border-radius: 20px;
+      margin-top: 10px;
+  }
+
+  .trending-opportunities {
+      margin-left: 20px;
+      text-align: center;
+  }
+
+  .card-container {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
