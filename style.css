@@ -347,34 +347,54 @@ section{
     outline: none;
 }
 
+
+
 @media (max-width: 768px) {
-    .filter-container {
-        flex-direction: column; /* Stack elements */
-        align-items: stretch; /* Make items fill the width */
-        border-radius: 20px; /* Softer rounded corners */
-        padding: 10px;
-        max-width: 90%; /* Adjust width for smaller screens */
-    }
+  .filter-container {
+      flex-direction: column; /* Stack elements vertically */
+      align-items: center;
+      border-radius: 20px;
+      padding: 15px;
+      max-width: 90%;
+      border: 2px solid black;
+  }
 
-    .select-wrapper {
-        width: 100%;
-        border-right: none; /* Remove border between selects */
-        margin-bottom: 10px;
-    }
+  .select-wrapper {
+      width: 100%;
+      position: relative;
+      margin-bottom: 10px;
+  }
 
-    .filter-container button {
-        width: 100%; /* Full width button */
-        border-radius: 20px;
-    }
+  /* Add boxes around category and country */
+  .select-wrapper select {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      text-align: center;
+      background: #f1f1f1;
+      border: 2px solid black;
+      border-radius: 8px;
+  }
+
+  .filter-container button {
+      width: 100%;
+      border-radius: 12px;
+  }
 }
-
-
 
 .trending-opportunities {
   margin-left: 200px;
   font-size: 24px;
   font-weight: bold;
   font-family: 'TeX Gyre Adventor', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .trending-opportunities {
+      margin-left: 20px; /* Reduce left margin for small screens */
+      font-size: 18px; /* Decrease font size for better readability */
+      text-align: center; /* Center the text */
+  }
 }
 
 .card-container {
@@ -432,26 +452,4 @@ hr {
 .card-footer {
   font-size: 14px;
   color: #666;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .filter-container {
-      flex-direction: column;
-      border-radius: 20px;
-  }
-
-  .filter-container button {
-      border-radius: 20px;
-      margin-top: 10px;
-  }
-
-  .trending-opportunities {
-      margin-left: 20px;
-      text-align: center;
-  }
-
-  .card-container {
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
 }
